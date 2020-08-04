@@ -1,5 +1,6 @@
 <?php 
 
+
 $connect = mysqli_connect('localhost','root','','findbiz');
 
 // to run and return boolean expression from database
@@ -14,6 +15,7 @@ function runQuery($query){
 		return false;
 	}
 }
+
 
 // calling data as array from mysqli database
 function callingQuery($query){

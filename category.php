@@ -23,17 +23,18 @@
 			<div class="row">
 			<?php 
 
-			if(isset($_GET['cat'])){
-				$cat = $_GET['cat'];
-				$calling = callingQuery("SELECT * FROM records JOIN categories ON records.category = categories.cat_id where records.category='$cat'");
+				if(isset($_GET['cat'])){
+					$cat = $_GET['cat'];
+
+					$calling = callingQuery("SELECT * FROM records JOIN categories ON records.category = categories.cat_id where records.category='$cat'");
+				
 
 
-				if(empty($calling)){
-					echo "<div class='alert bg-warning text-center'> Not Found </div>";
+					if(empty($calling)){
+						echo "<div class='alert alert-warning'>Not Found</div>";
+					}
 				}
-			}
-			
-
+				
 			foreach($calling as $data):
 				?>
 				<div class="col-lg-12">

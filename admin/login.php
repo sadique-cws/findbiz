@@ -40,7 +40,15 @@ if(isset($_SESSION['admin_log'])){
 			$username = $_POST['username'];
 			$password = $_POST['password'];
 
+
+			$username = mysqli_real_escape_string($connect,$username);
+			$password = mysqli_real_escape_string($connect,$password);
+
+
+
 			$query = "SELECT * FROM admin where username='$username' AND password='$password'";
+
+
 
 			if(checkQuery($query)){
 					$_SESSION['admin_log'] = $username;

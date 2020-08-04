@@ -23,14 +23,21 @@
 			<div class="row">
 			<?php 
 
-			if(isset($_GET['find'])){
-				$search = $_GET['search'];
-				$calling = callingQuery("SELECT * FROM records JOIN categories ON records.category = categories.cat_id where records.title LIKE '%$search%'");
-			}
-			else{
-				$calling = callingQuery("SELECT * FROM records JOIN categories ON records.category = categories.cat_id");
-			}
+				if(isset($_GET['find'])){
+					$search = $_GET['search'];
 
+					$calling = callingQuery("SELECT * FROM records JOIN categories ON records.category = categories.cat_id where records.title LIKE '%$search%'");
+				
+				}
+				
+				else{
+				
+					$calling = callingQuery("SELECT * FROM records JOIN categories ON records.category = categories.cat_id");
+				
+				}
+			
+				
+			
 			foreach($calling as $data):
 				?>
 				<div class="col-lg-12">
